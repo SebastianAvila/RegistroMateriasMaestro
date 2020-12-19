@@ -1,0 +1,125 @@
+-- phpMyAdmin SQL Dump
+-- version 5.0.4
+-- https://www.phpmyadmin.net/
+--
+-- Servidor: 127.0.0.1
+-- Tiempo de generación: 19-12-2020 a las 20:44:35
+-- Versión del servidor: 10.4.16-MariaDB
+-- Versión de PHP: 7.4.12
+
+SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
+START TRANSACTION;
+SET time_zone = "+00:00";
+
+
+/*!40101 SET @OLD_CHARACTER_SET_CLIENT=@@CHARACTER_SET_CLIENT */;
+/*!40101 SET @OLD_CHARACTER_SET_RESULTS=@@CHARACTER_SET_RESULTS */;
+/*!40101 SET @OLD_COLLATION_CONNECTION=@@COLLATION_CONNECTION */;
+/*!40101 SET NAMES utf8mb4 */;
+
+--
+-- Base de datos: `registro_maes_mate`
+--
+
+-- --------------------------------------------------------
+
+--
+-- Estructura de tabla para la tabla `lista_maestros`
+--
+
+CREATE TABLE `lista_maestros` (
+  `id_Maes` varchar(2) COLLATE utf8_spanish2_ci NOT NULL,
+  `nombre_Maestro` varchar(50) COLLATE utf8_spanish2_ci NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_spanish2_ci;
+
+--
+-- Volcado de datos para la tabla `lista_maestros`
+--
+
+INSERT INTO `lista_maestros` (`id_Maes`, `nombre_Maestro`) VALUES
+('M1', 'Jorge Martinez'),
+('M2', 'Emiliano Arceo'),
+('M3', 'Edgar Luz'),
+('M4', 'Mariana Cein'),
+('M5', 'Jose Lopez');
+
+-- --------------------------------------------------------
+
+--
+-- Estructura de tabla para la tabla `lista_materias`
+--
+
+CREATE TABLE `lista_materias` (
+  `id_Materia` varchar(20) COLLATE utf8_spanish2_ci NOT NULL,
+  `nombre_Materia` varchar(20) COLLATE utf8_spanish2_ci NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_spanish2_ci;
+
+--
+-- Volcado de datos para la tabla `lista_materias`
+--
+
+INSERT INTO `lista_materias` (`id_Materia`, `nombre_Materia`) VALUES
+('Ma_Sin', 'Sin Asignar'),
+('Ma_Qu', 'Quimica'),
+('Ma_Mate', 'Matematicas'),
+('Ma_Pro', 'Programacion'),
+('Ma_Lec', 'Lectura'),
+('Ma_Inf', 'Inferencia'),
+('Ma_His', 'Historia');
+
+-- --------------------------------------------------------
+
+--
+-- Estructura de tabla para la tabla `relacionmate_maes`
+--
+
+CREATE TABLE `relacionmate_maes` (
+  `id_Maes` varchar(50) COLLATE utf8_spanish2_ci NOT NULL,
+  `id_Materia` varchar(50) COLLATE utf8_spanish2_ci NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_spanish2_ci;
+
+--
+-- Volcado de datos para la tabla `relacionmate_maes`
+--
+
+INSERT INTO `relacionmate_maes` (`id_Maes`, `id_Materia`) VALUES
+('M1', 'Ma_Sin'),
+('M1', 'Ma_Qu'),
+('M1', 'Ma_Mate'),
+('M1', 'Ma_Pro'),
+('M1', 'Ma_Lec'),
+('M1', 'Ma_Inf'),
+('M1', 'Ma_His'),
+('M2', 'Ma_Sin'),
+('M2', 'Ma_Qu'),
+('M2', 'Ma_Mate'),
+('M2', 'Ma_Pro'),
+('M2', 'Ma_Lec'),
+('M2', 'Ma_Inf'),
+('M2', 'Ma_His'),
+('M3', 'Ma_Sin'),
+('M3', 'Ma_Qu'),
+('M3', 'Ma_Mate'),
+('M3', 'Ma_Pro'),
+('M3', 'Ma_Lec'),
+('M3', 'Ma_Inf'),
+('M3', 'Ma_His'),
+('M4', 'Ma_Sin'),
+('M4', 'Ma_Qu'),
+('M4', 'Ma_Mate'),
+('M4', 'Ma_Pro'),
+('M4', 'Ma_Lec'),
+('M4', 'Ma_Inf'),
+('M4', 'Ma_His'),
+('M5', 'Ma_Sin'),
+('M5', 'Ma_Qu'),
+('M5', 'Ma_Mate'),
+('M5', 'Ma_Pro'),
+('M5', 'Ma_Lec'),
+('M5', 'Ma_Inf'),
+('M5', 'Ma_His');
+COMMIT;
+
+/*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
+/*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
+/*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
